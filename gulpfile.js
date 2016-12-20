@@ -19,7 +19,7 @@ var runSequence = require('run-sequence');
 gulp.task('watch', ['browserSync', 'sass'], function (){
   gulp.watch('styles/**/*.scss', ['sass']); 
   gulp.watch('**/*.html', browserSync.reload); 
-  gulp.watch('app/js/**/*.js', browserSync.reload); 
+  gulp.watch('js/**/*.js', browserSync.reload); 
 });
 
 gulp.task('browserSync', function() {

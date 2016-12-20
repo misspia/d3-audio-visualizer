@@ -1,0 +1,16 @@
+$baseColor: #101010;
+$coolColor: #6bdef7;
+
+$transition: all 0.3s;
+
+@mixin circle($width) {
+	height:$width; width: $width;
+	border-radius: 50%;
+}
+@mixin rect($width, $height){
+	height: $height; width: $width;
+	border-radius:0;
+}
+@mixin rectMinSize($width, $height){
+	min-height: $height; min-width: $width;
+}
