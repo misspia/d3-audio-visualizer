@@ -2,7 +2,6 @@
 
 @import 'base/variables';
 @import 'base/layout';
-@import 'base/assets';
 
 
 body {
@@ -12,49 +11,50 @@ body {
   @include rect(100%, 90vh);
   overflow:hidden;
 }
-#player{
-  @include rect(100%, 100%);
-}
+
 #viz{
-
   @include rect(100%, 90%);
-
-  svg{
-    
-  }
 }
 
 #options{
-    .play-state, .audio-time, .volume{
+    .play-state, .audio-time, .volume, #themes{
         border:solid blue 0.1em;
     }
 
-   .play-state{
-    flex:1;
-    
+   .play-state, .volume{
+    flex:1; 
    }
    .audio-time{
-
-    flex:3;
-
+    flex:4;
    }
-   .volume{
-    flex:1;
-   }
-  
+  #themes{
+    flex:2;
+  }
   .audio-time{
     .total-time{
       border:solid red 0.1em;
       transform: skewX(-30deg);
     }
-    .current-time{
+    #elapsed-time{
       background-color: green;
-      // width:100%;
     }
   }
  
 }
 
+path { 
+    stroke: steelblue;
+    stroke-width: 2;
+    fill: none;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: grey;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+}
 
 
 /*

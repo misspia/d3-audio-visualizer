@@ -8,43 +8,49 @@
 </head>
 
 <body class="col center align-center">
-  <audio id="audioElement" src="media/Parting.mp3"></audio>
+  <audio id="audio-element" src="media/Parting.mp3"></audio>
 
-  <ul id="player" class="col center align-center">
+  <ul id="player" class="col center align-center full-width-height">
 
     <li id="options" class="row center full-width">
       <ul class = "row center full-width-height">
-        <li class="row center align-center play-state">
-           <button onclick="togglePlay(this)"> Play &#9658;</button>
-       </li>
-        <li class="row center align-cener audio-time">
-           <!-- <div class="row full-width total-time">
-               <div class="current-time"></div>
-           </div> -->
-           <input type="range"
-                    min = "0" max="1"
-                    value = "0"
-                    />
-       </li>
-       <li class="row center align-center volume">
-        Volume 
-        <input type="range" 
-        min="0" max="1"
-        value = "1"
-        step="0.01"
-        oninput="changeVolume(this)"/>
+
+         <li class="row center align-center volume">
+                Volume 
+                <input type="range" 
+                min="0" max="1"
+                value = "1"
+                step="0.01"
+                oninput="changeVolume(this)"/>
+        </li>
+
+        <li class="row center align-center play-state"  onclick="togglePlay(this)">
+            Play &#9658;
+         </li>
+
+         <li class="row center align-cener audio-time">
+               <div class="row full-width total-time">
+                   <div id="elapsed-time"></div>
+               </div>
+        </li>
+
+        <li id="themes" class="row space-around align-center"></li>
+           
+        </ul>
+
+
     </li>
-</ul>
 
+    <li id="viz"></li>
 
-</li>
+    </ul>
 
-<li id="viz"></li>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 
-</ul>
-
-<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-<script src="js/app.js"></script>
-<script src="js/circleViz.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/audioOptions.js"></script>
+    <!-- <script src="js/radialViz.js"></script> -->
+    <!-- <script src="js/barViz.js"></script> -->
+    <script src="js/waveViz.js"></script>
 </body>
 </html>

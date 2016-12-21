@@ -5,7 +5,7 @@
     'use strict';
 
     var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    var audioElement = document.getElementById('audioElement');
+    var audioElement = document.getElementById('audio-element');
     var audioSrc = audioCtx.createMediaElementSource(audioElement);
     var analyser = audioCtx.createAnalyser();
 

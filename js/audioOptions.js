@@ -1,4 +1,4 @@
-var audioElement = document.getElementById('audioElement');
+var audioElement = document.getElementById('audio-element');
 
 var playState = false;
 
@@ -27,20 +27,22 @@ function pauseAudio(){
 	audioElement.pause();
 }
 
-var currentTime = 0;
+
+var elapsedTimeElement = document.getElementById('elapsed-time');
+
 audioElement.ontimeupdate = function() {
 	displayTime();
 }
 
 function displayTime() {
+
 	currentTime = audioElement.currentTime,
 	totalTime = audioElement.duration,
 	elapsedTime = currentTime / totalTime * 100;
 
-	// console.log(audioElement.currentTime + " of " + audioElement.duration);
-	console.log(elapsedTime);
-}
+	elapsedTimeElement.style.width = elapsedTime + "%";
 
+}
 
 
 function changeVolume(el){
