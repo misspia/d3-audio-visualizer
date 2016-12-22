@@ -1,4 +1,4 @@
-(function() {
+function radialVisualization() {
     'use strict';
 
     var svg = createSvg('#viz', svgHeight, svgWidth);
@@ -41,4 +41,4 @@
     // run animation loop
     renderChart();
 
-}());
+};

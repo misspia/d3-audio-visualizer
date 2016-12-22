@@ -1,4 +1,4 @@
-(function() {
+function frequencyVisualization() {
 
   'use strict';
 
@@ -42,4 +42,4 @@
   // Run the loop
   renderChart();
 
-}());
+};

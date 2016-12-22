@@ -16,7 +16,7 @@
       <ul class = "col center align-center full-width-height">
          <li class="row center align-center full-width title">Settings</li>
 
-       <li class="row center align-center full-width volume">  
+         <li class="row center align-center full-width volume">  
 
             Volume 
             <input type="range" 
@@ -24,26 +24,27 @@
             value = "1"
             step="0.01"
             oninput="changeVolume(this)"/>
-            
+
         </li>  
 
         <li class="row center align-center full-width audio-time">
             <span class="row center align-center play-state"  
-                    onclick="togglePlay(this)">
-                 &#9658;
-            </span>
+            onclick="togglePlay(this)">
+            &#9658;
+        </span>
 
-             <div class="row total-time">
-                 <div id="elapsed-time"></div>
-             </div>
-         </li>
-        
-        <li class="row center align-center full-width title">Themes</li>
-     <li id="themes" class="row space-around align-center full-width">
-         
-     </li>
+        <div class="row total-time">
+         <div id="elapsed-time"></div>
+     </div>
+ </li>
 
-    </ul>
+ <li class="row center align-center full-width title">Themes</li>
+ <li id="themes" class="row space-around align-center full-width"></li>
+
+ <li class="row center align-center full-width title">Graph</li>
+ <li id="graph-options" class="row space-around align-center full-width"></li>
+
+</ul>
 
 </li>
 
@@ -57,8 +58,10 @@
 <script src="js/audioControls.js"></script>
 
 <script src="js/visualizations/components.js"></script>
-<!-- <script src="js/visualizations/radial.js"></script> -->
+<script src="js/visualizations/radial.js"></script>
 <script src="js/visualizations/frequency.js"></script>
-<!-- <script src="js/visualizations/wave.js"></script> -->
+<script src="js/visualizations/wave.js"></script>
+
+<script type="text/javascript" src = "js/graphOptions.js"></script>
 </body>
 </html>

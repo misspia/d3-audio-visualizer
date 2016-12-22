@@ -54,6 +54,14 @@ body {
       }
     }
   }
+  #graph-options{
+    span{
+      transition: $transition;
+    }
+    .active{
+      background-color:red;
+    }
+  }
 }
 
 

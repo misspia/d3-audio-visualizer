@@ -142,6 +142,10 @@ body {
     flex: 1; }
     #controls #themes span:hover {
       background-color: red; }
+  #controls #graph-options span {
+    transition: all 0.3s; }
+  #controls #graph-options .active {
+    background-color: red; }
 
 path {
   stroke: steelblue;

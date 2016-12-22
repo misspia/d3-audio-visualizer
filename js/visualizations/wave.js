@@ -1,4 +1,4 @@
-(function() {
+function waveVisualization() {
 
   'use strict';
 
@@ -36,4 +36,5 @@
 
   renderChart();
 
-}());
+};
+
