@@ -2,6 +2,7 @@
 
 @import 'base/variables';
 @import 'base/layout';
+@import 'base/assets';
 
 
 body {
@@ -16,31 +17,48 @@ body {
   @include rect(100%, 90%);
 }
 
-#options{
-    .play-state, .audio-time, .volume, #themes{
-        border:solid blue 0.1em;
+#controls{
+  opacity:0.7;
+  position:absolute;
+  bottom:1em; left:1em;
+  @include rect(25em, 18em);
+  background-color: $assetBaseColor;
+    
+    li{
+      flex:1;
+      // border:solid blue 0.1em;
     }
 
-   .play-state, .volume{
-    flex:1; 
-   }
-   .audio-time{
-    flex:4;
-   }
-  #themes{
-    flex:2;
-  }
+    .play-state{
+      cursor:pointer;
+    }
+
   .audio-time{
     .total-time{
-      border:solid red 0.1em;
-      transform: skewX(-30deg);
+      background-color: $baseColor;
+      @include rect(90%, 50%);
+      transform: skewX(-25deg);
     }
     #elapsed-time{
+      transition: $transition;
       background-color: green;
     }
   }
- 
+  
+  #themes{
+    span{
+      cursor:pointer;
+      flex:1;
+      &:hover{
+        background-color:red;
+      }
+    }
+  }
 }
+
+
+
+
 
 path { 
     stroke: steelblue;

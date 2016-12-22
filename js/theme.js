@@ -1,10 +1,18 @@
 var themes = {
-	warm: '',
-	cool: ''
+	warm: {
+		r: 255,
+		g: 180,
+		b: 0
+	},
+	cool: {
+		r: 0,
+		g: 223,
+		b: 255
+	}
 };
 
 var themeContainer = document.getElementById('themes');
-
+elapsedTimeBar = document.getElementById('elapsed-time');
 
 
 for(var theme in themes){
@@ -13,14 +21,17 @@ for(var theme in themes){
 	themeLabel = document.createTextNode(theme);
 
 	themeOption.appendChild(themeLabel);
-	themeOption.setAttribute('onclick', 'test(" ' + theme + ' ")');
+	themeOption.setAttribute('onclick', 'setTheme("' + theme + '")');
 
 	themeContainer.appendChild(themeOption);
 
 }
 
-function test(theme) {
-	console.log(theme);
+function setTheme(theme) {
+	var color = themes[theme];
+	
+	elapsedTimeBar.style.backgroundColor = 'rgb(' + color.r + ', ' + color.g + ', ' + color.b + ')';
+
 }
 
 

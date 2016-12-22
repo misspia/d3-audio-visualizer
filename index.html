@@ -12,45 +12,53 @@
 
   <ul id="player" class="col center align-center full-width-height">
 
-    <li id="options" class="row center full-width">
-      <ul class = "row center full-width-height">
+    <li id="controls" class="row center">
+      <ul class = "col center align-center full-width-height">
+         <li class="row center align-center full-width title">Settings</li>
 
-         <li class="row center align-center volume">
-                Volume 
-                <input type="range" 
-                min="0" max="1"
-                value = "1"
-                step="0.01"
-                oninput="changeVolume(this)"/>
-        </li>
+       <li class="row center align-center full-width volume">  
 
-        <li class="row center align-center play-state"  onclick="togglePlay(this)">
-            Play &#9658;
+            Volume 
+            <input type="range" 
+            min="0" max="1"
+            value = "1"
+            step="0.01"
+            oninput="changeVolume(this)"/>
+            
+        </li>  
+
+        <li class="row center align-center full-width audio-time">
+            <span class="row center align-center play-state"  
+                    onclick="togglePlay(this)">
+                 &#9658;
+            </span>
+
+             <div class="row total-time">
+                 <div id="elapsed-time"></div>
+             </div>
          </li>
-
-         <li class="row center align-cener audio-time">
-               <div class="row full-width total-time">
-                   <div id="elapsed-time"></div>
-               </div>
-        </li>
-
-        <li id="themes" class="row space-around align-center"></li>
-           
-        </ul>
-
-
-    </li>
-
-    <li id="viz"></li>
+        
+        <li class="row center align-center full-width title">Themes</li>
+     <li id="themes" class="row space-around align-center full-width">
+         
+     </li>
 
     </ul>
 
-    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+</li>
 
-    <script src="js/theme.js"></script>
-    <script src="js/audioOptions.js"></script>
-    <!-- <script src="js/radialViz.js"></script> -->
-    <!-- <script src="js/barViz.js"></script> -->
-    <script src="js/waveViz.js"></script>
+<li id="viz"></li>
+
+</ul>
+
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+<script src="js/theme.js"></script>
+<script src="js/audioControls.js"></script>
+
+<script src="js/visualizations/components.js"></script>
+<!-- <script src="js/visualizations/radial.js"></script> -->
+<script src="js/visualizations/frequency.js"></script>
+<!-- <script src="js/visualizations/wave.js"></script> -->
 </body>
 </html>
