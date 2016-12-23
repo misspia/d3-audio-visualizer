@@ -45,18 +45,14 @@ body {
     }
   }
   
-  #themes{
+  #themes, #graph-options{
     span{
       cursor:pointer;
+      transition: $transition;
       flex:1;
       &:hover{
         background-color:red;
       }
-    }
-  }
-  #graph-options{
-    span{
-      transition: $transition;
     }
     .active{
       background-color:red;

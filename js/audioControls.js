@@ -8,12 +8,12 @@ function togglePlay(el){
 
 	if(playState == false) {
 
-		el.innerHTML = 'Play &#9658';
+		el.innerHTML = '&#9658';
 		pauseAudio();
 
 	} else {
 
-		el.innerHTML = 'Pause ||';
+		el.innerHTML = '||';
 		playAudio();
 
 	}

@@ -3,8 +3,6 @@ function frequencyVisualization() {
   'use strict';
 
   var barPadding = '1';
-
-
   var svg = createSvg('#viz', svgHeight, svgWidth);
 
   // Create initial D3 chart.
@@ -17,7 +15,6 @@ function frequencyVisualization() {
   })
   .attr('width', svgWidth / frequencyData.length - barPadding);
 
-  // Continuously loop and update chart with frequency data.
   function renderChart() {
    requestAnimationFrame(renderChart);
 
@@ -35,11 +32,10 @@ function frequencyVisualization() {
      })
      .attr('fill', function(d) {
        return 'rgb(' + d + ', 223,  255 )';
-       // (255, 180, hueScale(d)
+       // (255, 180, colorScale(d)
      });
    }
 
-  // Run the loop
   renderChart();
 
 };

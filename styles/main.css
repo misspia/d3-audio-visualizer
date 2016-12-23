@@ -137,14 +137,13 @@ body {
   #controls .audio-time #elapsed-time {
     transition: all 0.3s;
     background-color: green; }
-  #controls #themes span {
+  #controls #themes span, #controls #graph-options span {
     cursor: pointer;
+    transition: all 0.3s;
     flex: 1; }
-    #controls #themes span:hover {
+    #controls #themes span:hover, #controls #graph-options span:hover {
       background-color: red; }
-  #controls #graph-options span {
-    transition: all 0.3s; }
-  #controls #graph-options .active {
+  #controls #themes .active, #controls #graph-options .active {
     background-color: red; }
 
 path {

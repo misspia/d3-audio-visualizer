@@ -1,4 +1,4 @@
-function radialVisualization() {
+function radialVisualization(colorScale) {
     'use strict';
 
     var svg = createSvg('#viz', svgHeight, svgWidth);
@@ -14,9 +14,7 @@ function radialVisualization() {
         .domain([0, d3.max(frequencyData)])
         .range([0, svgHeight/2 -10]);
 
-        var hueScale = d3.scale.linear()
-        .domain([0, d3.max(frequencyData)])
-        .range([0, 255]);
+        var colorScale = setColorScale(frequencyData);
 
        // update d3 chart with new data
        var circles = svg.selectAll('circle')
@@ -32,7 +30,8 @@ function radialVisualization() {
         fill: 'none', 
         'stroke-width': 2,
         'stroke-opacity': 0.4,
-        stroke: function(d) { return d3.rgb(hueScale(d), 223, 255); }
+        // stroke: function(d) { return d3.rgb(colorScale(d), 223, 255); }
+        stroke: function(d) { return graphColors(colorScale(d)); }
     });
 
        circles.exit().remove(); 

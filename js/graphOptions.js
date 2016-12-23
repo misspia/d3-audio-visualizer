@@ -57,7 +57,6 @@ function selectGraph(graph){
 
 
 graphTabs = document.querySelectorAll('#graph-options span');
-console.log(graphTabs);
 
 function activeGraphTab(el){
 

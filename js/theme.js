@@ -21,18 +21,56 @@ for(var theme in themes){
 	themeLabel = document.createTextNode(theme);
 
 	themeOption.appendChild(themeLabel);
-	themeOption.setAttribute('onclick', 'setTheme("' + theme + '")');
+	themeOption.setAttribute('onclick', 'setTheme(this, "' + theme + '")');
 
 	themeContainer.appendChild(themeOption);
 
 }
 
-function setTheme(theme) {
-	var color = themes[theme];
+
+
+var theme = 'warm';
+function setTheme(el, themeInput) {
+
+	theme = themeInput;
+
+	activeThemeTab(el)
+	staticColors(theme);
+
+	return theme;
+
+}
+
+function graphColors(d){
 	
-	elapsedTimeBar.style.backgroundColor = 'rgb(' + color.r + ', ' + color.g + ', ' + color.b + ')';
+	switch(theme) {
+		case "cool":
+			return d3.rgb(d, 223, 255);
+			break;
+		case "warm":
+			return d3.rgb(255, 180, d);
+			break;
+	}
 
 }
 
 
+function staticColors(theme){
 
+	color = themes[theme];
+
+	elapsedTimeBar.style.backgroundColor = 'rgb(' + color.r + ', ' + color.g + ', ' + color.b + ')';
+}
+
+
+
+themeTabs = document.querySelectorAll('#themes span');
+
+function activeThemeTab(el){
+
+	for(i = 0; i < themeTabs.length; i++){
+		themeTabs[i].classList.remove('active');
+	}
+
+	el.className = "active";
+}

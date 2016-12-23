@@ -23,3 +23,11 @@ var analyser = audioCtx.createAnalyser();
   		'border': 'solid 0.1em red'
   	});
   }
+
+function setColorScale(frequencyData){
+  var colorScale = d3.scale.linear()
+      .domain([0, d3.max(frequencyData)])
+      .range([0, 255]);
+
+    return colorScale;
+}
