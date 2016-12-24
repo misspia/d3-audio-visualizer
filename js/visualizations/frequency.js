@@ -31,8 +31,7 @@ function frequencyVisualization() {
        return d ;
      })
      .attr('fill', function(d) {
-       return 'rgb(' + d + ', 223,  255 )';
-       // (255, 180, colorScale(d)
+       return graphColors(d);
      });
    }
 

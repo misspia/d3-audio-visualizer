@@ -30,6 +30,13 @@ function waveVisualization() {
 
      svg.selectAll("path")
      .attr('d', valueline(frequencyData))
+     .attr('stroke', function(d){
+        return graphColors(d);
+     })
+     .attr({
+      'stroke-width': 2,
+      'fill': 'none'
+    })
 
 
  }

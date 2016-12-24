@@ -2,7 +2,7 @@ input[type=range] {
     margin: auto;
     outline: none;
     padding: 0;
-    height: 0.2em;
+    @include rect(70%, 0.2em);
     background-color: #fff;
     cursor: pointer;
     -webkit-appearance: none;

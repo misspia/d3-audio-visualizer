@@ -5,43 +5,46 @@
 @import 'base/assets';
 
 
-body {
+#main {
   font-family: monospace;
   background-color: $baseColor;
   color: #fff;
-  @include rect(100%, 90vh);
   overflow:hidden;
+  &.cool{
+    #elapsed-time, .active{
+      background-color: rgb(0, 223, 255);
+    }
+  }
+  &.warm{
+    #elapsed-time, .active{
+      background-color: rgb(255,180,0);
+    }
+  }
 }
 
-#viz{
-  @include rect(100%, 90%);
-}
 
 #controls{
   opacity:0.7;
   position:absolute;
   bottom:1em; left:1em;
-  @include rect(25em, 18em);
+  @include rect(22em, 15em);
   background-color: $assetBaseColor;
+  border: solid 0.8em $assetBaseColor;
     
-    li{
+    li, span{
       flex:1;
-      // border:solid blue 0.1em;
     }
 
     .play-state{
       cursor:pointer;
+      width:5%;
     }
 
   .audio-time{
     .total-time{
       background-color: $baseColor;
-      @include rect(90%, 50%);
+      @include rect(80%, 50%);
       transform: skewX(-25deg);
-    }
-    #elapsed-time{
-      transition: $transition;
-      background-color: green;
     }
   }
   
@@ -49,49 +52,7 @@ body {
     span{
       cursor:pointer;
       transition: $transition;
-      flex:1;
-      &:hover{
-        background-color:red;
-      }
-    }
-    .active{
-      background-color:red;
+      text-align:center;
     }
   }
 }
-
-
-
-
-
-path { 
-    stroke: steelblue;
-    stroke-width: 2;
-    fill: none;
-}
-
-.axis path,
-.axis line {
-    fill: none;
-    stroke: grey;
-    stroke-width: 1;
-    shape-rendering: crispEdges;
-}
-
-
-/*
-
-design: https://dribbble.com/shots/612307-Take-Everything-Blog-Refresh
-
-CIRCULAR
-idea:  https://www.google.ca/search?q=circle+audio+visualizer&espv=2&biw=1309&bih=700&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjYjqK-kf_QAhVKyoMKHbK8ChMQ_AUIBigB#imgrc=OJ7ToH00pYUyjM%3A
-
-  - warm: https://d1a6a9r46cnyll.cloudfront.net/42e818ad3698b6d58d9c6eb8fbeb4dc8e1d5f619/687474703a2f2f692e696d6775722e636f6d2f4c3932374653552e6a7067
-  -cool: https://d1a6a9r46cnyll.cloudfront.net/0198758c7b728df25f324eb46e43bb50af9d6118/687474703a2f2f692e696d6775722e636f6d2f386e79746435492e6a7067 
-  - rainbow: http://www.footagefirm.com/videos/description/46000/46005-5.jpg
-  - clash: https://www.google.ca/search?q=circle+audio+visualizer&espv=2&biw=1309&bih=700&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjYjqK-kf_QAhVKyoMKHbK8ChMQ_AUIBigB#imgdii=FAd8mr_Dw1sVBM%3A%3BFAd8mr_Dw1sVBM%3A%3BFVAChj-mJzEOQM%3A&imgrc=FAd8mr_Dw1sVBM%3A
-  - bg: http://pre10.deviantart.net/00f9/th/pre/f/2015/263/d/4/circular_spectrum_by_kruximity-d8nwnnc.png
-
-LINEAR
-http://img14.deviantart.net/23a6/i/2012/155/0/5/___spectrum____by_darkeagle2011-d527t4e.jpg
-*/

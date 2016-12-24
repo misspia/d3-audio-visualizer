@@ -5,6 +5,8 @@ var graphs = [
 var vizContainer = document.getElementById('viz');
 var graphOptionsContainer = document.getElementById('graph-options');
 
+var graph;
+var defaultGraph = 0;
 
 for(i = 0; i < graphs.length; i++){
 
@@ -12,11 +14,19 @@ for(i = 0; i < graphs.length; i++){
 	graphLabel = document.createTextNode(graphs[i]);
 
 	graphOption.appendChild(graphLabel);
+	graphOption.setAttribute('class', 'row center align-center full-height');
 	graphOption.setAttribute('onclick', 'setGraph(this,"' + graphs[i] + '")');
+
+	if(defaultGraph == i) {
+		
+		graphOption.className += ' active';
+		selectGraph(graphs[i]);
+	}
 
 	graphOptionsContainer.appendChild(graphOption);
 }
 
+var graph = graphs[defaultGraph];
 function setGraph(el, graph){
 	
 	activeGraphTab(el);
@@ -33,8 +43,8 @@ function setGraph(el, graph){
 	selectGraph(graph);
 }
 
-
-function selectGraph(graph){
+function selectGraph(graphInput){
+	graph = graphInput;
 
 	switch(graph) {
 
@@ -64,5 +74,5 @@ function activeGraphTab(el){
 		graphTabs[i].classList.remove('active');
 	}
 
-	el.className = "active";
+	el.className += " active";
 }

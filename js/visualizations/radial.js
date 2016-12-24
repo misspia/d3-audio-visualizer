@@ -30,7 +30,6 @@ function radialVisualization(colorScale) {
         fill: 'none', 
         'stroke-width': 2,
         'stroke-opacity': 0.4,
-        // stroke: function(d) { return d3.rgb(colorScale(d), 223, 255); }
         stroke: function(d) { return graphColors(colorScale(d)); }
     });
 
