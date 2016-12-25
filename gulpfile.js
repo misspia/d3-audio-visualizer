@@ -47,6 +47,7 @@ gulp.task('vendor-prefix', function () {
 	];
     return gulp.src('styles/main.css')
         .pipe(postcss(processors))
+        .pipe(cssnano())
         .pipe(gulp.dest('styles'));
 });
 

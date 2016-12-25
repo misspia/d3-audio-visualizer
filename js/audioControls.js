@@ -51,9 +51,8 @@ function changeVolume(el){
 
 var audioUpload = document.getElementById('audio-upload');
 
-audioUpload.onchange = function(){
-    var files = this.files;
-    var file = URL.createObjectURL(files[0]); 
-            audioElement.src = file; 
-    audioElement.play();
-};
+function handleUpload(obj){
+	var files = obj.files;
+	var file = file = URL.createObjectURL(files[0]); 
+		audioElement.src = file;
+}

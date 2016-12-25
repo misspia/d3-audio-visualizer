@@ -18,7 +18,7 @@
 
        <li class="col space-between full-width audio-upload">
            Hit play OR upload your own song
-           <input type="file" id = "audio-upload" accept="audio/*" />
+           <input type="file" id = "audio-upload" accept="audio/*" onchange="handleUpload(this)" />
        </li>
        
        <li class="row flex-start align-center full-width audio-time">
