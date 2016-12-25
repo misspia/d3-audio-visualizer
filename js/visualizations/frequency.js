@@ -1,11 +1,9 @@
 function frequencyVisualization() {
-
   'use strict';
 
   var barPadding = '1';
   var svg = createSvg('#viz', svgHeight, svgWidth);
 
-  // Create initial D3 chart.
   svg.selectAll('rect')
   .data(frequencyData)
   .enter()
@@ -18,10 +16,8 @@ function frequencyVisualization() {
   function renderChart() {
    requestAnimationFrame(renderChart);
 
-     // Copy frequency data to frequencyData array.
      analyser.getByteFrequencyData(frequencyData);
 
-     // Update d3 chart with new data.
      svg.selectAll('rect')
      .data(frequencyData)
      .attr('y', function(d) {
@@ -36,5 +32,4 @@ function frequencyVisualization() {
    }
 
   renderChart();
-
 };

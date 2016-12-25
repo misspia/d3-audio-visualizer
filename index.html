@@ -12,37 +12,44 @@
 
   <ul id="player" class="col center align-center full-width-height">
 
-    <li id="controls" class="row center">
+    <li id="settings" class="row center">
       <ul class = "col center align-center full-width-height">
-         <li class="row center align-center full-width title">Settings</li>
+       <li class="row center align-center full-width title">Settings</li>
 
-         <li class="row center align-center full-width volume">  
-
-            Volume 
-            <input type="range" 
-            min="0" max="1"
-            value = "1"
-            step="0.01"
-            oninput="changeVolume(this)"/>
-
-        </li>  
-
-        <li class="row flex-start align-center full-width audio-time">
-            <span class="row center align-center play-state"  
-            onclick="togglePlay(this)">
-            &#9658;
+       <li class="col space-between full-width audio-upload">
+           Hit play OR upload your own song
+           <input type="file" id = "audio-upload" accept="audio/*" onchange="handleUpload(this)" />
+       </li>
+       
+       <li class="row flex-start align-center full-width audio-time">
+        <span class="row center align-center play-state"  
+        onclick="togglePlay(this)">
+        &#9658;
         </span>
 
         <div class="row total-time">
          <div id="elapsed-time"></div>
      </div>
- </li>
+    </li>
 
- <li class="row center align-center full-width title">THEMES</li>
- <li id="themes" class="row space-around align-center full-width"></li>
+    <li class="row center align-center full-width volume">  
 
- <li class="row center align-center full-width title">GRAPH</li>
- <li id="graph-options" class="row space-around align-center full-width"></li>
+        Volume 
+        <input type="range" 
+        min="0" max="1"
+        value = "1"
+        step="0.01"
+        oninput="changeVolume(this)"/>
+
+    </li>  
+
+
+
+<li class="row center align-center full-width title">THEMES</li>
+<li id="themes" class="row space-around align-center full-width"></li>
+
+<li class="row center align-center full-width title">GRAPH</li>
+<li id="graph-options" class="row space-around align-center full-width"></li>
 
 </ul>
 
@@ -52,7 +59,7 @@
 
 </ul>
 
-<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/d3/d3.min.js"></script>
 
 <script src="js/theme.js"></script>
 <script src="js/audioControls.js"></script>

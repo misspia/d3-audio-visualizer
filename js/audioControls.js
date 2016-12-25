@@ -44,8 +44,14 @@ function displayTime() {
 
 }
 
-
 function changeVolume(el){
 	audioElement.volume = el.value;
 }
 
+var audioUpload = document.getElementById('audio-upload');
+
+function handleUpload(obj){
+	var files = obj.files;
+	var file = file = URL.createObjectURL(files[0]); 
+		audioElement.src = file;
+}
