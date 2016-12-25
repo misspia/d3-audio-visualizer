@@ -44,7 +44,6 @@ function displayTime() {
 
 }
 
-
 function changeVolume(el){
 	audioElement.volume = el.value;
 }

@@ -6,17 +6,14 @@ function radialVisualization(colorScale) {
     function renderChart() {
         requestAnimationFrame(renderChart);
 
-        // copy frequency data to frequencyData array.
         analyser.getByteFrequencyData(frequencyData);
 
-        // scale things to fit
         var radiusScale = d3.scale.linear()
         .domain([0, d3.max(frequencyData)])
         .range([0, svgHeight/2 -10]);
 
         var colorScale = setColorScale(frequencyData);
 
-       // update d3 chart with new data
        var circles = svg.selectAll('circle')
        .data(frequencyData);
 
@@ -35,8 +32,5 @@ function radialVisualization(colorScale) {
 
        circles.exit().remove(); 
    }
-
-    // run animation loop
     renderChart();
-
 };
