@@ -1,5 +1,4 @@
 var audioElement = document.getElementById('audio-element');
-
 var playState = false;
 
 function togglePlay(el){
@@ -20,6 +19,7 @@ function togglePlay(el){
 }
 
 function playAudio(){
+
 	audioElement.play();
 }
 
@@ -55,11 +55,22 @@ function handleUpload(obj){
 	pauseAudio();
 
 	var files = obj.files;
+	
+	fileData(files); 
+
 	var file = file = URL.createObjectURL(files[0]); 
 		audioElement.src = file;
 	
 	playAudio();
 	
+}
+
+var audioTitle = document.getElementById('audio-title');
+
+function fileData(files) {
+	var name = files[0].name;
+
+	audioTitle.innerHTML = name;
 }
 
 
