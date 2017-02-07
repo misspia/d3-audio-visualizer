@@ -2,7 +2,6 @@ var audioElement = document.getElementById('audio-element');
 var playState = false;
 
 function togglePlay(el){
-	console.log(el);
 	playState = !playState;
 
 	if(playState == false) {
@@ -50,7 +49,6 @@ function changeVolume(el){
 
 var audioUpload = document.getElementById('audio-upload');
 var playState = document.getElementsByClassName('play-state')[0];
-console.log(playState);
 
 function handleUpload(obj){
 	

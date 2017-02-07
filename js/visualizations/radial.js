@@ -1,4 +1,4 @@
-function radialVisualization(colorScale) {
+function radialVisualization() {
     'use strict';
 
     var svg = createSvg('#viz', svgHeight, svgWidth);
@@ -27,7 +27,8 @@ function radialVisualization(colorScale) {
         fill: 'none', 
         'stroke-width': 2,
         'stroke-opacity': 0.4,
-        stroke: function(d) { return graphColors(colorScale(d)); }
+        // stroke: function(d) { return graphColors(colorScale(d)); }
+        stroke: function(d) { return graphColors(d); }
     });
 
        circles.exit().remove(); 
