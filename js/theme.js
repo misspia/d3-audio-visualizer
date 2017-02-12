@@ -10,6 +10,12 @@ var themes = {
 		g: 223,
 		b: 255,
 		defaultActive: false
+	},
+	forest:{
+		r:0,
+		g: 255,
+		b:140,
+		defaultActive:false
 	}
 };
 
@@ -63,6 +69,8 @@ function graphColors(d){
 		case "warm":
 			return d3.rgb(color.r, color.g, d);
 			break;
+		case "forest":
+			return d3.rgb(d, color.g, color.b)
 	}
 
 }

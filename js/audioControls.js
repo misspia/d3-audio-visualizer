@@ -1,18 +1,14 @@
 var audioElement = document.getElementById('audio-element');
-var playState = false;
 
 function togglePlay(el){
-	playState = !playState;
 
-	if(playState == false) {
-
-		el.innerHTML = '&#9658';
-		pauseAudio();
+	if(audioElement.paused) {
+		el.innerHTML = '||';
+		playAudio();		
 
 	} else {
-
-		el.innerHTML = '||';
-		playAudio();
+		el.innerHTML = '&#9658';
+		pauseAudio();	
 
 	}
 }
