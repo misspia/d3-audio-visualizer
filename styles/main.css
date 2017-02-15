@@ -96,6 +96,8 @@ input[type=range]::-moz-range-thumb {
     background-color: #ffb400; }
   #main.forest #elapsed-time, #main.forest .active {
     background-color: #00ff8c; }
+  #main.santa #elapsed-time, #main.santa .active {
+    background-color: #ff0037; }
 
 #audio-title {
   position: absolute;

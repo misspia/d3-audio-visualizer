@@ -16,7 +16,14 @@ var themes = {
 		g: 255,
 		b:140,
 		defaultActive:false
+	},
+	santa:{
+		r:255,
+		g: 0,
+		b:55,
+		defaultActive:false
 	}
+
 };
 
 var themeContainer = document.getElementById('themes'),
@@ -70,7 +77,11 @@ function graphColors(d){
 			return d3.rgb(color.r, color.g, d);
 			break;
 		case "forest":
-			return d3.rgb(d, color.g, color.b)
+			return d3.rgb(d, color.g, color.b);
+			break;
+		case "santa":
+			return d3.rgb(color.r, d, d);
+			break;
 	}
 
 }

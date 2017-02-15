@@ -25,6 +25,11 @@
       background-color: rgb(0,255,140);
     }
   }
+  &.santa{
+    #elapsed-time, .active {
+      background-color: rgb(255, 0, 55);
+    }
+  }
 }
 
 #audio-title{
