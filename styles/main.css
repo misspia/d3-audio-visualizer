@@ -84,6 +84,10 @@ input[type=range]::-moz-range-thumb {
   border: 0;
   background: #fff; }
 
+@media screen and (max-device-width: 500px) {
+  body {
+    font-size: 2em; } }
+
 #main {
   font-family: monospace;
   background-color: #1e1e1e;

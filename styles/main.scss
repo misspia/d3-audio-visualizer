@@ -2,6 +2,11 @@
 @import 'base/layout';
 @import 'base/assets';
 
+@media screen and (max-device-width: 500px) {
+  body{
+    font-size:2em;
+  }
+}
 
 #main {
   font-family: monospace;
